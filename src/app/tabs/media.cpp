@@ -20,7 +20,7 @@ void MediaTab::fill_tabs()
 {
     // this->addTab(new RadioPlayerSubTab(this), "Radio");
     this->addTab(new BluetoothPlayerSubTab(this), "Bluetooth");
-    this->addTab(new LocalPlayerSubTab(this), "Local");
+    this->addTab(new LocalPlayerSubTab(this), "Lokal");
 }
 
 BluetoothPlayerSubTab::BluetoothPlayerSubTab(QWidget *parent) : QWidget(parent)
@@ -43,7 +43,7 @@ QWidget *BluetoothPlayerSubTab::track_widget()
     QWidget *widget = new QWidget(this);
     QVBoxLayout *layout = new QVBoxLayout(widget);
 
-    QLabel *artist_hdr = new QLabel("Artist", widget);
+    QLabel *artist_hdr = new QLabel("Künstler", widget);
     artist_hdr->setFont(Theme::font_16);
     QLabel *artist = new QLabel((media_player != nullptr) ? media_player->track().artist() : QString(), widget);
     artist->setFont(Theme::font_14);
@@ -59,7 +59,7 @@ QWidget *BluetoothPlayerSubTab::track_widget()
     layout->addWidget(album_hdr);
     layout->addWidget(album);
 
-    QLabel *title_hdr = new QLabel("Title", widget);
+    QLabel *title_hdr = new QLabel("Titel", widget);
     title_hdr->setFont(Theme::font_16);
     QLabel *title = new QLabel((media_player != nullptr) ? media_player->track().title() : QString(), widget);
     title->setFont(Theme::font_14);

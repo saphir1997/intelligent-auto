@@ -166,14 +166,14 @@ QWidget *OpenAutoTab::msg_widget()
     QWidget *widget = new QWidget(this);
     QVBoxLayout *layout = new QVBoxLayout(widget);
 
-    QLabel *label = new QLabel("connect device to start Android Auto", widget);
+    QLabel *label = new QLabel("Smartphone verbinden, um Android Auto zu starten", widget);
     label->setFont(Theme::font_16);
     label->setAlignment(Qt::AlignCenter);
 
     QWidget *connection = this->wireless_widget();
     if (!this->config->get_wireless_active()) connection->hide();
 
-    QCheckBox *wireless_button = new QCheckBox("Wireless", widget);
+    QCheckBox *wireless_button = new QCheckBox("Kabellos", widget);
     wireless_button->setFont(Theme::font_14);
     wireless_button->setChecked(this->config->get_wireless_active());
     connect(wireless_button, &QCheckBox::toggled, [config = this->config, connection](bool checked) {
@@ -198,7 +198,7 @@ QWidget *OpenAutoTab::wireless_widget()
     IpInput *ip_input = new IpInput(this->config->get_wireless_address(), QFont("Titillium Web", 24), widget);
     layout->addWidget(ip_input);
 
-    QPushButton *button = new QPushButton("connect", widget);
+    QPushButton *button = new QPushButton("Verbinden", widget);
     button->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Preferred);
     button->setFont(Theme::font_14);
     button->setFlat(true);

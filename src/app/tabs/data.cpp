@@ -168,7 +168,7 @@ QWidget *DataTab::coolant_temp_widget()
     layout->addWidget(coolant_temp);
     this->gauges.push_back(coolant_temp);
 
-    QLabel *coolant_temp_label = new QLabel("coolant", widget);
+    QLabel *coolant_temp_label = new QLabel("Temperatur", widget);
     coolant_temp_label->setFont(QFont("Montserrat", 14, QFont::Light));
     coolant_temp_label->setAlignment(Qt::AlignHCenter);
     layout->addWidget(coolant_temp_label);
@@ -187,7 +187,7 @@ QWidget *DataTab::engine_load_widget()
     layout->addWidget(engine_load);
     this->gauges.push_back(engine_load);
 
-    QLabel *engine_load_label = new QLabel("load", widget);
+    QLabel *engine_load_label = new QLabel("Motorlast", widget);
     engine_load_label->setFont(QFont("Montserrat", 14, QFont::Light));
     engine_load_label->setAlignment(Qt::AlignHCenter);
     layout->addWidget(engine_load_label);

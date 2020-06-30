@@ -51,13 +51,13 @@ QWidget *CameraTab::connect_widget()
     QWidget *widget = new QWidget(this);
     QVBoxLayout *layout = new QVBoxLayout(widget);
 
-    QLabel *label = new QLabel("connect camera stream", widget);
+    QLabel *label = new QLabel("Kamerastream verbinden", widget);
     label->setFont(Theme::font_16);
 
     this->status = new QLabel(widget);
     this->status->setFont(Theme::font_16);
 
-    QPushButton *button = new QPushButton("connect", widget);
+    QPushButton *button = new QPushButton("Verbinden", widget);
     button->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Preferred);
     button->setFont(Theme::font_14);
     button->setFlat(true);
@@ -109,10 +109,10 @@ void CameraTab::update_status(QMediaPlayer::MediaStatus media_status)
         case QMediaPlayer::LoadingMedia:
         case QMediaPlayer::LoadedMedia:
         case QMediaPlayer::BufferedMedia:
-            this->status->setText("connecting...");
+            this->status->setText("Verbinden...");
             break;
         default:
-            this->status->setText("connection failed");
+            this->status->setText("Verbindung fehlgeschlagen");
             emit disconnected();
             break;
     }
